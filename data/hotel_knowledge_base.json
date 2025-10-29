@@ -1,0 +1,134 @@
+[
+  {
+    "id": "service_001",
+    "category": "hotel_services",
+    "question": "Quali sono gli orari della colazione?",
+    "answer": "La colazione è servita dalle 7:00 alle 10:30 nella sala ristorante al piano terra. Offriamo una ricca selezione di prodotti freschi, dolci e salati, con opzioni vegetariane e vegane."
+  },
+  {
+    "id": "service_002",
+    "category": "hotel_services",
+    "question": "C'è il servizio in camera?",
+    "answer": "Il servizio in camera è disponibile 24 ore su 24. Può ordinare tramite il telefono in camera (tasto 1) o tramite questo assistente virtuale."
+  },
+  {
+    "id": "service_003",
+    "category": "hotel_services",
+    "question": "Quali sono gli orari della reception?",
+    "answer": "La reception è aperta 24 ore su 24, 7 giorni su 7. Il nostro staff è sempre a disposizione per qualsiasi esigenza."
+  },
+  {
+    "id": "service_004",
+    "category": "hotel_services",
+    "question": "C'è il WiFi gratuito?",
+    "answer": "Sì, offriamo WiFi ad alta velocità gratuito in tutte le aree dell'hotel. Le credenziali sono disponibili in camera e alla reception."
+  },
+  {
+    "id": "spa_001",
+    "category": "spa_wellness",
+    "question": "Quali servizi offre la spa?",
+    "answer": "La nostra spa offre massaggi rilassanti, trattamenti viso e corpo, sauna finlandese, bagno turco e piscina riscaldata. Orari: 9:00-20:00. Prenotazione consigliata."
+  },
+  {
+    "id": "spa_002",
+    "category": "spa_wellness",
+    "question": "Come prenoto un massaggio?",
+    "answer": "Può prenotare un massaggio contattando la spa al numero interno 3, tramite la reception, o direttamente con me. Abbiamo disponibilità per massaggi di 30, 60 o 90 minuti."
+  },
+  {
+    "id": "policy_001",
+    "category": "policies",
+    "question": "Qual è l'orario di check-in e check-out?",
+    "answer": "Check-in dalle 14:00, check-out entro le 11:00. È possibile richiedere late check-out (soggetto a disponibilità, supplemento €50 fino alle 18:00)."
+  },
+  {
+    "id": "policy_002",
+    "category": "policies",
+    "question": "È possibile cancellare la prenotazione?",
+    "answer": "Cancellazione gratuita fino a 48 ore prima dell'arrivo. Entro 48 ore verrà addebitata la prima notte di soggiorno."
+  },
+  {
+    "id": "policy_003",
+    "category": "policies",
+    "question": "Accettate animali domestici?",
+    "answer": "Sì, accettiamo animali domestici di piccola taglia (fino a 10kg) con un supplemento di €25 al giorno. Si prega di informarci al momento della prenotazione."
+  },
+  {
+    "id": "attr_001",
+    "category": "local_attractions",
+    "question": "Cosa visitare a Venezia?",
+    "answer": "Le principali attrazioni includono Piazza San Marco (10 minuti a piedi), il Ponte di Rialto (15 minuti), Palazzo Ducale, la Basilica di San Marco e il Canal Grande. Consigliamo un giro in gondola al tramonto."
+  },
+  {
+    "id": "attr_002",
+    "category": "local_attractions",
+    "question": "Quali musei consiglia?",
+    "answer": "Imperdibili: Gallerie dell'Accademia (arte veneziana), Palazzo Ducale (storia e architettura), Museo Correr (storia di Venezia), e la Collezione Peggy Guggenheim (arte moderna)."
+  },
+  {
+    "id": "attr_003",
+    "category": "local_attractions",
+    "question": "Dove fare shopping?",
+    "answer": "Per lo shopping di lusso: via XXII Marzo e Calle Larga. Per prodotti artigianali: zona Rialto e Dorsoduro. Per il vetro di Murano: isola di Murano raggiungibile in vaporetto."
+  },
+  {
+    "id": "rest_001",
+    "category": "dining",
+    "question": "Ristoranti consigliati nelle vicinanze?",
+    "answer": "Per la cucina veneziana autentica consigliamo: Osteria alle Testiere (frutti di mare, 5 min a piedi), Trattoria Antiche Carampane (cucina tradizionale, 10 min), e Ristorante Quadri in Piazza San Marco (alta cucina con vista)."
+  },
+  {
+    "id": "rest_002",
+    "category": "dining",
+    "question": "Dove mangiare il tipico cicchetti veneziano?",
+    "answer": "I migliori bacari per cicchetti: Cantina Do Mori (storico, 8 min a piedi), All'Arco (prodotti freschi, 10 min), e Cantinone Già Schiavi (ottimi vini, 12 min)."
+  },
+  {
+    "id": "rest_003",
+    "category": "dining",
+    "question": "C'è un ristorante nell'hotel?",
+    "answer": "Sì, il nostro ristorante La Terrazza offre cucina italiana contemporanea con vista sul canal. Aperto a cena 19:00-23:00 (chiuso lunedì). Prenotazione consigliata."
+  },
+  {
+    "id": "transport_001",
+    "category": "transport",
+    "question": "Come arrivare dall'aeroporto?",
+    "answer": "Da Aeroporto Marco Polo: water taxi privato (30 min, €110), Alilaguna (linea arancione, 75 min, €15), o taxi+vaporetto. Da Treviso: bus ATVO + vaporetto (90 min, €15)."
+  },
+  {
+    "id": "transport_002",
+    "category": "transport",
+    "question": "Come funziona il vaporetto?",
+    "answer": "Il vaporetto è il trasporto pubblico di Venezia. Biglietto singolo €9.50 (75 min), giornaliero €25, 48h €35. Le fermate più vicine sono San Marco e Rialto. Acquistabili alla reception."
+  },
+  {
+    "id": "transport_003",
+    "category": "transport",
+    "question": "Posso prenotare un water taxi?",
+    "answer": "Certamente! Possiamo organizzare water taxi privati per transfer aeroporto, escursioni alle isole o spostamenti in città. Prenotazione con almeno 2 ore di anticipo."
+  },
+  {
+    "id": "transport_004",
+    "category": "transport",
+    "question": "Come visitare le isole di Murano e Burano?",
+    "answer": "Vaporetto linea 12 per Murano (25 min) e linea 12 per Burano (40 min da Murano). Consigliamo la mattina per evitare la folla. Tour organizzati disponibili su richiesta."
+  },
+  {
+    "id": "service_005",
+    "category": "hotel_services",
+    "question": "C'è un servizio lavanderia?",
+    "answer": "Sì, offriamo servizio lavanderia e stiratura. Consegna entro 24 ore per il servizio standard, 4 ore per il servizio express (supplemento 50%). Listino prezzi in camera."
+  },
+  {
+    "id": "service_006",
+    "category": "hotel_services",
+    "question": "Dove posso parcheggiare?",
+    "answer": "L'hotel non dispone di parcheggio proprio (Venezia è pedonale). Consigliamo il Garage San Marco o Tronchetto. Possiamo organizzare il trasferimento bagagli con water taxi."
+  },
+  {
+    "id": "dining_004",
+    "category": "dining",
+    "question": "Avete opzioni per celiaci e allergici?",
+    "answer": "Sì, offriamo menu specifici per celiaci, intolleranze e allergie. Si prega di informarci al momento della prenotazione o almeno 24 ore prima per permetterci di preparare pasti adeguati."
+  }
+]
