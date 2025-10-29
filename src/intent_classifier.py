@@ -63,7 +63,7 @@ def classify_guest_intent(guest_message: str) -> Intent:
     complaint_patterns = [
         r'\b(lament|complaint|reclamo|problem)\b',
         r'\b(non funziona|not working|rotto|broken|guasto)\b',
-        r'\b(sporco|dirty|pulito male|not clean)\b',
+        r'\b(sporca|sporco|dirty|pulito male|not clean)\b',
         r'\b(rumore|noise|rumoros)\b',
         r'\b(freddo|caldo|troppo|too hot|too cold)\b',
         r'\b(insoddisfatt|unsatisfied|delus|disappointed)\b',
@@ -77,11 +77,12 @@ def classify_guest_intent(guest_message: str) -> Intent:
         r'\b(vorrei|would like|desidero|wish|voglio|want)\b',
         r'\b(room service|servizio in camera|order|ordinare)\b',
         r'\b(pulizie|housekeeping|pulire|clean|towel|asciugaman)\b',
-        r'\b(manutenzione|maintenance|riparazione|repair|fix)\b',
+        r'\b(manutenzione|maintenance|riparazione|repair)\b',
         r'\b(prenotare|prenota|book|reservation|reserve)\b',
         r'\b(spa|massaggio|massage)\b',
         r'\b(transfer|taxi|trasporto)\b',
-        r'\b(chiamare|call|contattare|contact)\b'
+        r'\b(chiamare|call|contattare|contact)\b',
+        r'\b(ho bisogno|need|necessito)\b'
     ]
     
     service_score = sum(1 for p in service_patterns if re.search(p, message_lower, re.IGNORECASE))
@@ -101,20 +102,20 @@ def classify_guest_intent(guest_message: str) -> Intent:
     
     # Priority 5: HOTEL INFO - Informazioni sull'hotel
     info_patterns = [
-        r'\b(orario|orari|hour|quando|when|tempo)\b',
+        r'\b(a che ora|at what time|che ora|orario|orari|hour)\b',
+        r'\b(quali sono|what are)\b',
         r'\b(c\'è|ci sono|is there|are there|have you|avete)\b',
         r'\b(informazione|information|info)\b',
         r'\b(check.?in|check.?out)\b',
         r'\b(wifi|internet|password)\b',
-        r'\b(colazione|breakfast|cena|dinner)\b',
+        r'\b(colazione|breakfast)\b(?!.*\b(prenota|order|vorrei))',
         r'\b(parcheggio|parking)\b',
-        r'\b(servizio|service|facility)\b',
         r'\b(quanto cost|how much|prezzo|price)\b'
     ]
     
     info_score = sum(1 for p in info_patterns if re.search(p, message_lower, re.IGNORECASE))
     
-    # Decision logic basata su score
+    # Decision logic basata su score con priorità
     scores = {
         'complaint': complaint_score,
         'service_request': service_score,
@@ -128,14 +129,19 @@ def classify_guest_intent(guest_message: str) -> Intent:
     if max_score == 0:
         return 'special_request'
     
-    # In caso di parità, usa priorità predefinita
-    if scores['complaint'] == max_score and max_score > 0:
+    # Priorità in caso di parità: complaint > service > recommendation > info
+    # Ma se c'è un chiaro vincitore (>1.5x altri), usa quello
+    if scores['complaint'] >= max_score and complaint_score > 0:
         return 'complaint'
-    elif scores['service_request'] == max_score:
+    elif scores['service_request'] >= max_score and service_score > 0:
+        # Check se non è più probabile hotel_info per domande tipo "A che ora..."
+        if info_score > 0 and 'quando' in message_lower or 'che ora' in message_lower or 'orario' in message_lower or 'quali sono' in message_lower:
+            if 'prenota' not in message_lower and 'vorrei' not in message_lower and 'posso' not in message_lower:
+                return 'hotel_info'
         return 'service_request'
-    elif scores['recommendation'] == max_score:
+    elif scores['recommendation'] >= max_score and recommendation_score > 0:
         return 'recommendation'
-    elif scores['hotel_info'] == max_score:
+    elif scores['hotel_info'] >= max_score and info_score > 0:
         return 'hotel_info'
     else:
         return 'special_request'
